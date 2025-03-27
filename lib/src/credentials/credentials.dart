@@ -29,13 +29,16 @@ abstract class Credentials {
   /// bytes representation of the [eth_sign RPC method](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sign),
   /// but without the "Ethereum signed message" prefix.
   /// The [payload] parameter contains the raw data, not a hash.
-  Uint8List signToUint8List(
+  Future<Uint8List> signToUint8List(
     Uint8List payload, {
     int? chainId,
     bool isEIP1559 = false,
-  }) {
-    final signature =
-        signToEcSignature(payload, chainId: chainId, isEIP1559: isEIP1559);
+  }) async {
+    final signature = await signToEcSignature(
+      payload,
+      chainId: chainId,
+      isEIP1559: isEIP1559,
+    );
 
     final r = padUint8ListTo32(unsignedIntToBytes(signature.r));
     final s = padUint8ListTo32(unsignedIntToBytes(signature.s));
@@ -47,7 +50,7 @@ abstract class Credentials {
 
   /// Signs the [payload] with a private key and returns the obtained
   /// signature.
-  MsgSignature signToEcSignature(
+  Future<MsgSignature> signToEcSignature(
     Uint8List payload, {
     int? chainId,
     bool isEIP1559 = false,
@@ -56,7 +59,10 @@ abstract class Credentials {
   /// Signs an Ethereum specific signature. This method is equivalent to
   /// [signToUint8List], but with a special prefix so that this method can't be used to
   /// sign, for instance, transactions.
-  Uint8List signPersonalMessageToUint8List(Uint8List payload, {int? chainId}) {
+  Future<Uint8List> signPersonalMessageToUint8List(
+    Uint8List payload, {
+    int? chainId,
+  }) {
     final prefix = _messagePrefix + payload.length.toString();
     final prefixBytes = ascii.encode(prefix);
 
@@ -127,11 +133,11 @@ class EthPrivateKey extends CredentialsWithKnownAddress {
   ECPoint get publicKey => (params.G * privateKeyInt)!;
 
   @override
-  MsgSignature signToEcSignature(
+  Future<MsgSignature> signToEcSignature(
     Uint8List payload, {
     int? chainId,
     bool isEIP1559 = false,
-  }) {
+  }) async {
     final signature = secp256k1.sign(keccak256(payload), privateKey);
 
     // https://github.com/ethereumjs/ethereumjs-util/blob/8ffe697fafb33cefc7b7ec01c11e3a7da787fe0e/src/signature.ts#L26
