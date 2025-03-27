@@ -5,7 +5,7 @@ import '../../utils/typed_data.dart';
 import 'integers.dart';
 import 'types.dart';
 
-import '../../../web3dart.dart' show LengthTrackingByteSink;
+import '../../../web3dart_cubealgos.dart' show LengthTrackingByteSink;
 
 /// The bytes<M> solidity type, which stores up to 32 bytes.
 class FixedBytes extends AbiType<Uint8List> {

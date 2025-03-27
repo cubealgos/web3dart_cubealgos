@@ -4,7 +4,7 @@ import 'arrays.dart';
 import 'integers.dart';
 import 'tuple.dart';
 
-import '../../../web3dart.dart' show LengthTrackingByteSink;
+import '../../../web3dart_cubealgos.dart' show LengthTrackingByteSink;
 
 /// The length of the encoding of a solidity type is always a multiplicative of
 /// this unit size.

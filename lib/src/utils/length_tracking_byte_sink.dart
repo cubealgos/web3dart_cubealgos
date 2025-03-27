@@ -1,4 +1,4 @@
-part of 'package:web3dart/web3dart.dart';
+part of 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 class LengthTrackingByteSink extends ByteConversionSinkBase {
   final Uint8Buffer _buffer = Uint8Buffer();
