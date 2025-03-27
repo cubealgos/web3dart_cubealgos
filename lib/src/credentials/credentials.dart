@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:web3dart/src/utils/equality.dart' as eq;
+import 'package:web3dart_cubealgos/src/utils/equality.dart' as eq;
 import 'package:pointycastle/ecc/api.dart' show ECPoint;
 
-import '../../web3dart.dart' show Transaction;
+import '../../web3dart_cubealgos.dart' show Transaction;
 import '../crypto/formatting.dart';
 import '../crypto/keccak.dart';
 import '../crypto/secp256k1.dart';

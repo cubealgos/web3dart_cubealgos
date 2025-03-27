@@ -1,4 +1,4 @@
-part of 'package:web3dart/web3dart.dart';
+part of 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 /// Utility class to easily convert amounts of Ether into different units of
 /// quantities.

@@ -7,7 +7,7 @@ import 'arrays.dart';
 import 'tuple.dart';
 import 'types.dart';
 
-import '../../../web3dart.dart' show LengthTrackingByteSink;
+import '../../../web3dart_cubealgos.dart' show LengthTrackingByteSink;
 
 /// Contract Function Type
 enum ContractFunctionType {

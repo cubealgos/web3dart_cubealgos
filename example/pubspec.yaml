@@ -8,7 +8,7 @@ environment:
   sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
-  web3dart:
+  web3dart_cubealgos:
     path: ../
   http: ^1.1.0
   web_socket_channel: ^2.2.0

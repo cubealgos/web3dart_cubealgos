@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:test/test.dart';
-import 'package:web3dart/crypto.dart';
-import 'package:web3dart/web3dart.dart';
+import 'package:web3dart_cubealgos/crypto.dart';
+import 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 void main() {
   test('parses full object', () async {

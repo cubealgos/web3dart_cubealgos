@@ -4,7 +4,7 @@ import '../../../credentials.dart';
 import '../../crypto/formatting.dart';
 import 'types.dart';
 
-import '../../../web3dart.dart' show LengthTrackingByteSink;
+import '../../../web3dart_cubealgos.dart' show LengthTrackingByteSink;
 
 abstract class _IntTypeBase extends AbiType<BigInt> {
   const _IntTypeBase(this.length)

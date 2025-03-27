@@ -3,9 +3,9 @@ import 'dart:typed_data';
 
 import 'package:http/http.dart';
 import 'package:test/test.dart';
-import 'package:web3dart/crypto.dart';
-import 'package:web3dart/src/utils/rlp.dart' as rlp;
-import 'package:web3dart/web3dart.dart';
+import 'package:web3dart_cubealgos/crypto.dart';
+import 'package:web3dart_cubealgos/src/utils/rlp.dart' as rlp;
+import 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 const rawJson = '''[
     {
