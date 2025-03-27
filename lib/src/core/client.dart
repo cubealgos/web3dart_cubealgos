@@ -86,13 +86,6 @@ class Web3Client {
     return (block ?? _defaultBlock).toBlockParam();
   }
 
-  /// Constructs a new [Credentials] with the provided [privateKey] by using
-  /// an [EthPrivateKey].
-  @Deprecated('Use EthPrivateKey.fromHex instead')
-  Future<EthPrivateKey> credentialsFromPrivateKey(String privateKey) {
-    return Future.value(EthPrivateKey.fromHex(privateKey));
-  }
-
   /// Returns the version of the client we're sending requests to.
   Future<String> getClientVersion() {
     return makeRPCCall('web3_clientVersion');
@@ -427,7 +420,6 @@ class Web3Client {
     EtherAmount? maxPriorityFeePerGas,
     EtherAmount? maxFeePerGas,
     Uint8List? data,
-    @Deprecated('Parameter is ignored') BlockNum? atBlock,
   }) async {
     final amountHex = await makeRPCCall<String>(
       'eth_estimateGas',
