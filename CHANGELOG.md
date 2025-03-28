@@ -1,3 +1,12 @@
+## 1.0.0
+
+- reset versioning
+- renamed library to `web3dart_cubealgos`
+- removed deprecated members
+- made credentials async
+
+> FORK HAPPENDED HERE
+
 ## 2.7.3
 
 - Address parsing regex bug fixed.

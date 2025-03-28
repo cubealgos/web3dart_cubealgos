@@ -1,8 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:web3dart_cubealgos/src/utils/equality.dart' as eq;
-import 'package:eip55/eip55.dart';
-
+import '../eip55/eip55.dart';
 import '../crypto/formatting.dart';
 import '../crypto/keccak.dart';
 import '../crypto/secp256k1.dart';
@@ -11,7 +10,7 @@ import '../crypto/secp256k1.dart';
 class EthereumAddress implements Comparable<EthereumAddress> {
   /// An ethereum address from the raw address bytes.
   const EthereumAddress(this.addressBytes)
-      : assert(addressBytes.length == addressByteLength);
+    : assert(addressBytes.length == addressByteLength);
 
   /// Constructs an Ethereum address from a public key. The address is formed by
   /// the last 20 bytes of the keccak hash of the public key.
@@ -57,8 +56,10 @@ class EthereumAddress implements Comparable<EthereumAddress> {
     return EthereumAddress(hexToBytes(hex));
   }
 
-  static final RegExp _basicAddress =
-      RegExp(r'^(0x)?[0-9a-f]{40}$', caseSensitive: false);
+  static final RegExp _basicAddress = RegExp(
+    r'^(0x)?[0-9a-f]{40}$',
+    caseSensitive: false,
+  );
 
   /// The length of an ethereum address, in bytes.
   static const addressByteLength = 20;
