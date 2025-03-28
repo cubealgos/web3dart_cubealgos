@@ -1,8 +1,8 @@
-name: web3dart
+name: web3dart_cubealgos
 description: Dart library to connect to Ethereum clients. Send transactions and interact with smart contracts!
-version: 2.7.3
-homepage: https://pwa.ir
-repository: https://github.com/xclud/web3dart
+version: 0.0.1
+homepage: https://cubealgos.org
+repository: https://github.com/cubealgos/web3dart_cubealgos
 
 environment:
   sdk: ">=2.12.0 <4.0.0"

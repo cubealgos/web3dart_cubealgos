@@ -3,9 +3,9 @@ import 'dart:typed_data';
 
 import 'package:http/http.dart';
 import 'package:test/test.dart';
-import 'package:web3dart/crypto.dart';
-import 'package:web3dart/src/utils/rlp.dart' as rlp;
-import 'package:web3dart/web3dart.dart';
+import 'package:web3dart_cubealgos/crypto.dart';
+import 'package:web3dart_cubealgos/src/utils/rlp.dart' as rlp;
+import 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 const rawJson = '''[
     {
@@ -152,7 +152,7 @@ void main() {
   test('sign eip 1559 transaction without client', () {
     final data = jsonDecode(rawJson) as List<dynamic>;
 
-    Future.forEach(data, (element) {
+    Future.forEach(data, (element) async {
       final tx = element as Map<String, dynamic>;
       final credentials =
           EthPrivateKey.fromHex(strip0x(tx['privateKey'] as String));
@@ -174,7 +174,7 @@ void main() {
       );
 
       final signature =
-          signTransactionRaw(transaction, credentials, chainId: 4);
+          await signTransactionRaw(transaction, credentials, chainId: 4);
 
       expect(
         bytesToHex(

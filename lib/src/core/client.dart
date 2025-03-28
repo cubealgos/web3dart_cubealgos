@@ -1,4 +1,4 @@
-part of 'package:web3dart/web3dart.dart';
+part of 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 /// Signature for a function that opens a socket on which json-rpc operations
 /// can be performed.
@@ -7,7 +7,7 @@ part of 'package:web3dart/web3dart.dart';
 /// pub is suitable to create websockets. An implementation using that library
 /// could look like this:
 /// ```dart
-/// import "package:web3dart/web3dart.dart";
+/// import "package:web3dart_cubealgos/web3dart_cubealgos.dart";
 /// import "package:web_socket_channel/io.dart";
 ///
 /// final client = Web3Client(rpcUrl, Client(), socketConnector: () {
@@ -84,13 +84,6 @@ class Web3Client {
 
   String _getBlockParam(BlockNum? block) {
     return (block ?? _defaultBlock).toBlockParam();
-  }
-
-  /// Constructs a new [Credentials] with the provided [privateKey] by using
-  /// an [EthPrivateKey].
-  @Deprecated('Use EthPrivateKey.fromHex instead')
-  Future<EthPrivateKey> credentialsFromPrivateKey(String privateKey) {
-    return Future.value(EthPrivateKey.fromHex(privateKey));
   }
 
   /// Returns the version of the client we're sending requests to.
@@ -427,7 +420,6 @@ class Web3Client {
     EtherAmount? maxPriorityFeePerGas,
     EtherAmount? maxFeePerGas,
     Uint8List? data,
-    @Deprecated('Parameter is ignored') BlockNum? atBlock,
   }) async {
     final amountHex = await makeRPCCall<String>(
       'eth_estimateGas',

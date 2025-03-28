@@ -1,5 +1,5 @@
 import '../../crypto.dart';
-import '../../web3dart.dart';
+import '../../web3dart_cubealgos.dart';
 
 /// Base classes for generated contracts.
 ///

@@ -1,4 +1,4 @@
-part of 'package:web3dart/web3dart.dart';
+part of 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 /// Utility class to easily convert amounts of Ether into different units of
 /// quantities.
@@ -6,27 +6,6 @@ class EtherAmount {
   const EtherAmount.inWei(this._value);
 
   EtherAmount.zero() : this.inWei(BigInt.zero);
-
-  /// Constructs an amount of Ether by a unit and its amount. [amount] can
-  /// either be a base10 string, an int or a BigInt.
-  @Deprecated(
-    'Please use fromInt, fromBigInt or fromBase10String.',
-  )
-  factory EtherAmount.fromUnitAndValue(EtherUnit unit, dynamic amount) {
-    BigInt parsedAmount;
-
-    if (amount is BigInt) {
-      parsedAmount = amount;
-    } else if (amount is int) {
-      parsedAmount = BigInt.from(amount);
-    } else if (amount is String) {
-      parsedAmount = BigInt.parse(amount);
-    } else {
-      throw ArgumentError('Invalid type, must be BigInt, string or int');
-    }
-
-    return EtherAmount.inWei(parsedAmount * _factors[unit]!);
-  }
 
   /// Constructs an amount of Ether by a unit and its amount.
   factory EtherAmount.fromInt(EtherUnit unit, int amount) {

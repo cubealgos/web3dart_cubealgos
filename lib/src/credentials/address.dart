@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:web3dart/src/utils/equality.dart' as eq;
+import 'package:web3dart_cubealgos/src/utils/equality.dart' as eq;
 import 'package:eip55/eip55.dart';
 
 import '../crypto/formatting.dart';
