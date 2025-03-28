@@ -1,19 +1,17 @@
 part of 'package:web3dart_cubealgos/web3dart_cubealgos.dart';
 
 class BlockInformation {
-  BlockInformation({
-    required this.baseFeePerGas,
-    required this.timestamp,
-  });
+  BlockInformation({required this.baseFeePerGas, required this.timestamp});
 
   factory BlockInformation.fromJson(Map<String, dynamic> json) {
     return BlockInformation(
-      baseFeePerGas: json.containsKey('baseFeePerGas')
-          ? EtherAmount.fromBigInt(
-              EtherUnit.wei,
-              hexToInt(json['baseFeePerGas'] as String),
-            )
-          : null,
+      baseFeePerGas:
+          json.containsKey('baseFeePerGas')
+              ? EtherAmount.fromBigInt(
+                EtherUnit.wei,
+                hexToInt(json['baseFeePerGas'] as String),
+              )
+              : null,
       timestamp: DateTime.fromMillisecondsSinceEpoch(
         hexToDartInt(json['timestamp'] as String) * 1000,
         isUtc: true,

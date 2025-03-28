@@ -3,4 +3,3 @@ library credentials;
 
 export 'src/credentials/address.dart';
 export 'src/credentials/credentials.dart';
-export 'src/credentials/wallet.dart';
