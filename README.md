@@ -1,3 +1,5 @@
+> This packages was forked from web3dart, below is the original README -> the project still follows it's API the only thing changed that credentials are now async
+
 [![pub package](https://img.shields.io/pub/v/web3dart)](https://pub.dartlang.org/packages/web3dart)
 [![likes](https://img.shields.io/pub/likes/web3dart)](https://pub.dartlang.org/packages/web3dart/score)
 [![points](https://img.shields.io/pub/points/web3dart)](https://pub.dartlang.org/packages/web3dart/score)
